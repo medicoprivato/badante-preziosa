@@ -365,7 +365,7 @@
       <div class="scenario-grid">
         <div class="scenario-story">
           <p><strong>Da giorni hai mal di gola e un po' di febbre</strong>, ma tra il turno di giorno e quello di notte non hai un momento per andare da un medico, e lasciare la persona che assisti non è un'opzione.</p>
-          <p>Con Medico Subito scrivi il tuo caso appena hai cinque minuti liberi: un medico lo legge, ti fa le domande necessarie e, se opportuno, ti invia la ricetta firmata elettronicamente, pronta da presentare in farmacia il giorno dopo.</p>
+          <p>Con Badante Preziosa scrivi il tuo caso appena hai cinque minuti liberi: un medico lo legge, ti fa le domande necessarie e, se opportuno, ti invia la ricetta firmata elettronicamente, pronta da presentare in farmacia il giorno dopo.</p>
         </div>
         <div class="timeline">
           <div class="tl-item">
@@ -395,28 +395,7 @@
   <div class="wrap">
     <div class="section-label">Resta in contatto</div>
     <h2>Non sei sola: scrivici su WhatsApp, quando vuoi tu</h2>
-    <div class="wa-grid">
-
-      <div class="wa-card">
-        <h3>Lasciaci il tuo numero</h3>
-        <p class="wa-sub">Ti scriviamo noi su WhatsApp.</p>
-        <form id="optinForm">
-          <label class="first" for="nome">Nome</label>
-          <input type="text" id="nome" placeholder="Come ti chiami" required>
-
-          <label for="telefono">Numero WhatsApp</label>
-          <input type="tel" id="telefono" placeholder="+39 3XX XXX XXXX" required pattern="^\+?[0-9\s]{8,16}$">
-
-          <div class="wa-consent">
-            <input type="checkbox" id="consenso" required>
-            <span>Acconsento al trattamento del mio numero di telefono da parte della Dott.ssa Anna Maria Ferri, titolare del trattamento, per essere ricontattata su WhatsApp riguardo al servizio Medico Subito. I dati non saranno ceduti a terzi e potrò richiedere la cancellazione in qualsiasi momento scrivendo al numero di contatto. Consulta la <a href="#" target="_blank">informativa privacy</a> completa.</span>
-          </div>
-
-          <button type="submit" class="wa-submit">Iscrivimi</button>
-          <div class="wa-status" id="formStatus"></div>
-        </form>
-      </div>
-
+    <div style="max-width:420px; margin:32px auto 0;">
       <div class="wa-card">
         <p class="wa-sub">Clicca il pulsante: si apre WhatsApp con il messaggio già pronto.</p>
         <div class="chat-mock">
@@ -427,7 +406,6 @@
           Scrivimi su WhatsApp
         </a>
       </div>
-
     </div>
   </div>
 </section>
@@ -443,16 +421,6 @@
   const WA_MESSAGE = "Ciao! Sono pronta per scrivere il mio caso.\n\nQuesto consulto riguarda: (scrivi \"me\" oppure \"la persona che assisto\")\n\nNome e cognome (di chi ha il problema):\nCosa succede:\nPatologie di cui eventualmente soffre:\nFarmaci in uso (o \"nessuno\"):\nAllergie note (o \"nessuna\"):\nE' incinta? (sì/no):\n\nConfermo di aver letto l'informativa e acconsento al servizio di consulenza a distanza. Se il consulto riguarda la persona che assisto, dichiaro di essere autorizzata a richiederlo per suo conto.";
   document.getElementById('waButton').href =
     `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MESSAGE)}`;
-
-  const form = document.getElementById('optinForm');
-  const status = document.getElementById('formStatus');
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    const nome = document.getElementById('nome').value.trim();
-    status.className = 'wa-status ok';
-    status.textContent = `Fatto, ${nome}: il consenso è registrato.`;
-    form.reset();
-  });
 </script>
 
 </body>
